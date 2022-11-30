@@ -30,6 +30,8 @@ class Replace_Social_Services_Icons
         if (isset($replacement)) {
             return preg_replace('/\<svg width(.*?)\<\/svg\>/', $replacement, $block_content);
         }
+
+        return $block_content;
     }
 
     private static function get_settings()
