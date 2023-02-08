@@ -8,7 +8,11 @@ function replaceIcon(variations, serviceName, icon) {
 }
 
 function filterSocialLinkIcons(settings, name) {
-    if (name === 'core/social-link') {
+    if ([
+        'core/social-link',
+        'outermost/social-sharing-link',
+    ].includes(name)
+    ) {
         const { variations } = settings;
         const services = themeData?.settings?.services;
         for (const service in services) {

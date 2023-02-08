@@ -2,12 +2,12 @@
 
 /**
  * Plugin Name: Replace Social Services Icons
- * Version: 0.1.1
+ * Version: 0.2.0
  */
 
 class Replace_Social_Services_Icons
 {
-    private static $version = '0.1.1';
+    private static $version = '0.2.0';
 
     private static function replace_icons(string $block_content, array $block, string $dir, $settings)
     {
@@ -89,7 +89,10 @@ class Replace_Social_Services_Icons
             return $block_content;
         }
 
-        if ($block['blockName'] === 'core/social-link') {
+        if (in_array($block['blockName'], [
+            'core/social-link',
+            'outermost/social-sharing-link',
+        ])) {
             return self::replace_icons($block_content, $block, $dir, $settings);
         }
 
