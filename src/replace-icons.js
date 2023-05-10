@@ -1,10 +1,13 @@
 /* global themeData */
 
-function replaceIcon(variations, serviceName, icon) {
-    const i = variations.findIndex(({ attributes }) => attributes.service === serviceName);
-    const newVar = variations[i];
-    newVar.icon = icon;
-    return { i, answer: newVar };
+function getVariationIndexByServiceName(variations, serviceName) {
+    return variations.findIndex(({ attributes }) => attributes.service === serviceName);
+}
+
+function replaceIcon(variation, icon) {
+    const IconComponent = () => <div dangerouslySetInnerHTML={{ __html: icon }} />;
+    variation.icon = IconComponent;
+    return variation;
 }
 
 function filterSocialLinkIcons(settings, name) {
@@ -20,9 +23,13 @@ function filterSocialLinkIcons(settings, name) {
             if (!icon) {
                 continue;
             }
-            const IconComponent = () => <div dangerouslySetInnerHTML={{ __html: icon }} />;
-            const { i, answer } = replaceIcon(variations, service, IconComponent);
-            variations[i] = answer;
+
+            const i = getVariationIndexByServiceName(variations, service);
+            if (i === -1) {
+                continue;
+            }
+
+            variations[i] = replaceIcon(variations[i], icon);
         }
         return { ...settings, variations };
     }
