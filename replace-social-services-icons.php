@@ -2,12 +2,12 @@
 
 /**
  * Plugin Name: Replace Social Services Icons
- * Version: 0.2.0
+ * Version: 0.2.1
  */
 
 class Replace_Social_Services_Icons
 {
-    private static $version = '0.2.0';
+    private static $version = '0.2.1';
 
     private static function replace_icons(string $block_content, array $block, string $dir, $settings)
     {
