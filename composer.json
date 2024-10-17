@@ -1,0 +1,22 @@
+{
+  "name": "evanshunt/wp-replace-social-icons",
+  "description": "A WordPress plugin to allow theme overrides of social media icons",
+  "type": "wordpress-plugin",
+  "homepage": "https://github.com/evanshunt/wp-plugin-replace-social-services-icons",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "social",
+    "icons"
+  ],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Evans Hunt",
+      "homepage": "https://evanshunt.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/evanshunt/wp-plugin-replace-social-services-icons/issues"
+  }
+}
